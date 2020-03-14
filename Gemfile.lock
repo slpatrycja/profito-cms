@@ -353,9 +353,6 @@ GEM
       rack (~> 2.0)
       rack-protection (>= 2.0.0)
       redis (>= 4.1.0)
-    simple_form (4.0.1)
-      actionpack (>= 5.0)
-      activemodel (>= 5.0)
     simplecov (0.18.5)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -438,12 +435,12 @@ DEPENDENCIES
   jquery-turbolinks
   listen (~> 3.1)
   overcommit
-  pg (>= 0.18, < 2.0)
+  pg
   pry-rails
   puma (~> 3.11)
   pundit
   rack-attack
-  rails (= 6.0.2.1)
+  rails (~> 6.0.0)
   rails-assets-bootstrap-sass-official (~> 3.3.0)!
   rails-controller-testing
   rspec-rails (~> 3.0)
@@ -454,7 +451,6 @@ DEPENDENCIES
   rubocop-rspec
   sass-rails
   shoulda-matchers
-  simple_form (~> 4.0.1)
   simplecov
   spring
   spring-commands-rspec
@@ -471,7 +467,7 @@ DEPENDENCIES
   will_paginate-bootstrap4
 
 RUBY VERSION
-   ruby 2.7.0p0
+   ruby 2.6.3p62
 
 BUNDLED WITH
    2.1.2

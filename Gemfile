@@ -3,14 +3,14 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.0'
+ruby '2.6.3'
 
 gem 'devise'
 gem 'ipaddr'
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'pundit'
-gem 'rails', '6.0.2.1'
+gem 'rails', '~> 6.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -43,7 +43,6 @@ end
 # other
 gem 'email_validator', '~> 1.6'
 gem 'httparty'
-gem 'simple_form', '~> 4.0.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
