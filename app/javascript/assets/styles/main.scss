@@ -1,0 +1,185 @@
+@import 'fonts';
+@import 'variables';
+@import 'grid';
+@import 'common-style';
+@import 'icons';
+@import 'tooltips';
+
+body {
+  font-family: $font-family;
+  background: $body-background;
+  color: $main-text-color;
+  font-size: 14px;
+  height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  height: 100%;
+}
+
+button {
+  border: none;
+  outline: none;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $main-text-color;
+  }
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 32px;
+}
+
+h4 {
+  font-size: 14px;
+  color: $main-text-color;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: $secondary-color;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 13px;
+  color: $secondary-color;
+  font-weight: normal;
+}
+
+p {
+  line-height: 22px;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.primary-color {
+  color: $primary-color;
+}
+
+.secondary-color {
+  color: $secondary-color;
+}
+
+.link--primary {
+  color: $primary-color;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: transform 10ms linear;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $primary-link-active-color;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  &:disabled {
+    color: $border-color;
+  }
+}
+
+.link--secondary {
+  color: $main-text-color;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 10ms linear;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $secondary-link-active-color;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  &:disabled {
+    color: $border-color;
+  }
+}
+
+.link--white {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  transition: transform 10ms linear;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #e6e6e6;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  &:disabled {
+    color: $border-color;
+  }
+}
+
+.icon--big {
+  width: 50px;
+}
+
+.icon--medium {
+  width: 40px;
+}
+
+.cd-avatar {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.no-margin {
+  margin: 0;
+}

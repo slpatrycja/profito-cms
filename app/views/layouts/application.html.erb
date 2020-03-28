@@ -4,12 +4,26 @@
     <title>ProfitoCms</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="d-flex" id="wrapper">
+      <div id="page-content-wrapper">
+        <% if notice %>
+          <div class="notice alert-dismissible">
+            <%= notice %>
+          </div>
+        <% end %>
+        <% if alert %>
+          <div class="alert alert-dismissible">
+            <%= alert %>
+          </div>
+        <% end %>
+        <div class="container-fluid">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

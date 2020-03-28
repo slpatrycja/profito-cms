@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_for :users
+
+  namespace :api do
+    resources :clients, except: [:new, :edit] do
+      resources :taxes
+      resources :benefits
+    end
+  end
+
+  get '/app/(*vue)', to: 'app/application#index', as: :vue_app
+  root to: 'app/application#index'
 end

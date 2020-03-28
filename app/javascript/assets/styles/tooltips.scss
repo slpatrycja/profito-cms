@@ -1,0 +1,90 @@
+.tooltip {
+  z-index: 8;
+
+  &.add_to_group {
+    z-index: 9;
+  }
+
+  .tooltip-inner {
+    border-radius: 8px;
+    box-shadow: 0 30px 50px 0 rgba(27, 41, 56, 0.2);
+    background-color: #ffffcf;
+    padding: 10px;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #1b2938;
+    max-width: 200px;
+  }
+
+  .tooltip-arrow {
+    width: 1px;
+    height: 1px;
+    border-style: solid;
+    position: absolute;
+    margin: 5px;
+    border-color: #ffffcf;
+  }
+
+  &.custom-arrow {
+    .tooltip-arrow {
+      left: 17px !important;
+    }
+  }
+
+  &[x-placement^="left"] {
+    margin-left: 5px;
+
+    .tooltip-arrow {
+      border-width: 5px 0 5px 5px;
+      border-top-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      left: calc(50% - 5px);
+      bottom: -5px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  &[x-placement^="top"] {
+    margin: 0 0 5px 35px;
+
+    .tooltip-arrow {
+      border-width: 5px 5px 0 5px;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      bottom: -5px;
+      left: calc(50% - 50px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &[x-placement^="bottom"] {
+    margin-top: 15px;
+
+    .tooltip-arrow {
+      border-width: 0 5px 5px 5px;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-top-color: transparent !important;
+      top: -5px;
+      left: calc(50% - 50px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.tooltip[aria-hidden='true'] {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.15s, visibility 0.15s;
+}
+
+.tooltip[aria-hidden='false'] {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.15s;
+}

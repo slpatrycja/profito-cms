@@ -20,25 +20,23 @@ gem 'jbuilder', '~> 2.5'
 
 # html, css and js
 gem 'autoprefixer-rails'
-gem 'bootstrap'
-gem 'bootstrap-multiselect-rails'
+gem 'bootstrap', '~> 4.0'
 gem 'bootstrap_form'
-gem 'coffee-rails'
-gem 'font-awesome-rails'
+gem 'bootstrap-multiselect-rails'
+gem 'coffee-rails', '~> 4.2'
+gem 'font-awesome-rails', '~> 4.7.0'
 gem 'gon'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'rack-attack'
 gem 'sass-rails'
+gem 'sprockets-rails', '2.3.3'
 gem 'tilt'
 gem 'turbolinks'
 gem 'will_paginate', require: %w[will_paginate will_paginate/array]
 gem 'will_paginate-bootstrap4'
-
-source 'https://rails-assets.org' do
-  gem 'rails-assets-bootstrap-sass-official', '~> 3.3.0'
-end
+gem 'webpacker'
 
 # other
 gem 'email_validator', '~> 1.6'

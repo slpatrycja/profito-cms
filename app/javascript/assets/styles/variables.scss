@@ -1,0 +1,54 @@
+//MAIN COLORS
+
+$primary-color: #0083ca;
+$secondary-color: #b3bec9;
+$primary-background-color: #f6f8fb;
+$main-text-color: #395f83;
+$body-background: #fcfdfd;
+
+$error-color: #f00;
+$border-color: #d1d4da;
+
+//SECONDARY COLORS
+
+$white: #fff;
+$violet: #8788ff;
+$persimmon: #ff5959;
+$salmon: #fc8364;
+$blue: #51b3ff;
+$meadow-green: #1fd58d;
+$rose: #f093ff;
+$mustard-yellow: #f9ca1a;
+
+$payments-guides-color: $violet;
+$unpaid-balance-apps-color: $persimmon;
+$subscribers-color: $salmon;
+$views-accounts-color: $blue;
+$engagement-settings-color: $meadow-green;
+$forum-color: $rose;
+$time-support-color: $mustard-yellow;
+
+$main-gradient: linear-gradient(0deg, #fefefe 85%, #eeeff1);
+$main-gradient-hover: linear-gradient(0deg, #fffffa 85%, #eeeff1);
+$gradient-reverse: linear-gradient(180deg, #fffffa 85%, #eeeff1);
+$reverse-gradient-hover: linear-gradient(180deg, #fffffa 85%, #eeeff1);
+$form-focus: #fffee2;
+$error-background: #fff8f8;
+$primary-link-active-color: #0075b8;
+$secondary-link-active-color: #192f44;
+
+$input-background: #fefefe;
+
+//SPACING
+
+$spacing: 10px;
+$double-spacing: 20px;
+$triple-spacing: 30px;
+
+//BREAKPOINTS
+$small-screen: 768px;
+$medium-screen: 992px;
+$large-screen: 1200px;
+
+//FONT
+$font-family: 'Eina02', Helvetica, Arial, sans-serif;
