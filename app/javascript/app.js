@@ -21,7 +21,6 @@ Vue.use(VueAxios, httpClient);
 Vue.axios.defaults.baseURL = '/api/';
 Vue.router = router;
 
-
 Vue.use(quickNotice, {});
 Vue.use(VTooltip);
 VTooltip.enabled = window.innerWidth > 768;
