@@ -16,6 +16,10 @@ import httpClient from './utils/http_client';
 import quickNotice from './utils/quick_notice';
 import './utils/filters';
 
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+
+Vue.use(Vuetify)
 Vue.directive('linkified', linkify);
 Vue.use(VueAxios, httpClient);
 Vue.axios.defaults.baseURL = '/api/';
@@ -38,6 +42,7 @@ moment.tz.setDefault('UTC');
 window.EventBus = new Vue();
 
 const app = new Vue({
+  vuetify: new Vuetify(),
   router,
   store,
   i18n,

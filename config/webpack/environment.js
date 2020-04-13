@@ -17,6 +17,15 @@ dotenvFiles.forEach((dotenvFile) => {
   dotenv.config({ path: dotenvFile, silent: true })
 })
 
+const resolver = {
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    }
+  }
+}
+
+environment.config.merge(resolver)
 environment.loaders.append('svg', svg)
 environment.loaders.append('vue', vue)
 environment.loaders.append('yml', yml)
