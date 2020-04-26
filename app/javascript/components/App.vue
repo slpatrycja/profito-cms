@@ -13,7 +13,7 @@
             <img src="../assets/images/profito-logo.png" class="logo">
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title>
+            <v-list-item-title class="app-title">
               ProfitoCMS
             </v-list-item-title>
           </v-list-item-content>
@@ -61,5 +61,9 @@
 <style lang="scss" scoped>
 .logo {
   transform: scale(1.5);
+}
+
+.app-title {
+  margin: 10px;
 }
 </style>
