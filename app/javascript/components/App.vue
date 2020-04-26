@@ -32,7 +32,9 @@
             </v-list-item-icon>
 
             <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
+              <v-list-item-title>
+                <router-link class="nav-link" :to="{ name: item.linkName }">{{ item.title }}</router-link>
+              </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -49,9 +51,9 @@
       return {
         drawer: true,
         items: [
-          { title: 'Dashboard', icon: 'mdi-view-dashboard' },
-          { title: 'Photos', icon: 'mdi-image' },
-          { title: 'About', icon: 'mdi-help-box' },
+          { title: 'Clients', linkName: 'clients', icon: 'mdi-view-dashboard' },
+          { title: 'Shipments', icon: 'mdi-image' },
+          { title: 'Admin', icon: 'mdi-help-box' },
         ],
       }
     },
@@ -65,5 +67,9 @@
 
 .app-title {
   margin: 10px;
+}
+
+.nav-link {
+  color: white;
 }
 </style>

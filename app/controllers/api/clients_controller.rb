@@ -3,10 +3,7 @@
 module Api
   class ClientsController < ApplicationController
     def index
-      clients = Client.order(created_at: :desc)
-                      .order(:surname)
-                      .search(params[:search])
-                      .paginate(page: params[:page], per_page: 20)
+      clients = Client.order(created_at: :desc).order(:surname)
 
       render json: clients
     end
