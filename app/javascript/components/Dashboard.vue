@@ -16,6 +16,7 @@
         :search="search"
         :items-per-page="12"
         :footer-props="{ itemsPerPageOptions: [12] }"
+        @click:row="showSingleClient"
         class="elevation-1"
       ></v-data-table>
     </v-card>
@@ -56,6 +57,9 @@ export default {
     getClients() {
       this.$store.dispatch('clients/index');
     },
+    showSingleClient(client) {
+      this.$router.push({ name: 'client-dashboard', params: { id: client.id }});
+    }
   },
 };
 </script>

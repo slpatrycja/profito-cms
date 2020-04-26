@@ -6,4 +6,9 @@ export default {
 
     return response.data;
   },
+  async get(id) {
+    const response = await httpClient.get(`/clients/${id}.json`);
+
+    return response.data;
+  },
 };

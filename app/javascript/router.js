@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import Dashboard from './components/Dashboard.vue'
+import ClientDashboard from './components/pages/client/Dashboard.vue'
 import NotFound from './components/pages/NotFound.vue'
 
 Vue.use(VueRouter);
@@ -11,9 +12,20 @@ export default new VueRouter({
   base: '/app',
   routes: [
     {
-      path: '/',
+      path: '',
       name: 'dashboard',
       component: Dashboard,
+    },
+    {
+      path: '/clients',
+      name: 'clients',
+      component: Dashboard,
+    },
+    {
+      path: '/clients/:id',
+      name: 'client-dashboard',
+      component: ClientDashboard,
+      props: true,
     },
     {
       path: '*',
