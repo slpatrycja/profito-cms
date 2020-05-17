@@ -40,8 +40,8 @@
         </v-list>
 
       </v-navigation-drawer>
-      <router-view />
     </v-container>
+    <router-view class="router-view-wrapper"/>
   </div>
 </template>
 
@@ -71,5 +71,10 @@
 
 .nav-link {
   color: white;
+}
+
+.router-view-wrapper {
+  margin-left: 256px;
+  width: 75vw;
 }
 </style>
