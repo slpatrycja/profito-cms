@@ -2,15 +2,17 @@
   <div v-if="isLoaded" class="main-wrapper">
     <div class="actions-wrapper">
       <div v-for="action in actions" class="p-col-md-3 action-card-wrapper">
-        <v-card
-          class="d-flex align-center action-card"
-          :class="`action-card-${action.toLowerCase()}`"
-          height="250"
-          width="250"
-          @click="toggle">
-          <img class="action-image":src="iconUrl(action.toLowerCase())">
-          <span class="action-title">{{ action }}</span>
-        </v-card>
+        <router-link :to="{ name: `client-${action}`, params: { clientId: id } }">
+          <v-card
+            class="d-flex align-center action-card"
+            :class="`action-card-${action.toLowerCase()}`"
+            height="250"
+            width="250"
+            @click="toggle">
+            <img class="action-image":src="iconUrl(action.toLowerCase())">
+            <span class="action-title">{{ action }}</span>
+          </v-card>
+        </router-link>
       </div>
     </div>
   </div>
@@ -63,6 +65,10 @@ export default {
   display: flex;
   flex-wrap: wrap;
   margin-left: 100px;
+
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 .action-card-wrapper {
