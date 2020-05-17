@@ -1,2 +1,10 @@
 en:
-  hello: "Hello world"
+  client_menu:
+    profile: Profile
+    taxes: Taxes
+    benefits: Benefits
+    payments: Payments
+    logs: Logs
+    others: Others
+  client_form:
+    editing: Editing

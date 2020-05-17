@@ -2,15 +2,16 @@
   <div v-if="isLoaded" class="main-wrapper">
     <div class="actions-wrapper">
       <div v-for="action in actions" class="p-col-md-3 action-card-wrapper">
-        <router-link :to="{ name: `client-${action}`, params: { clientId: id } }">
+        <router-link :to="{ name: `client-${action}`, params: { id } }">
           <v-card
             class="d-flex align-center action-card"
-            :class="`action-card-${action.toLowerCase()}`"
+            :class="`action-card-${action}`"
             height="250"
             width="250"
             @click="toggle">
-            <img class="action-image":src="iconUrl(action.toLowerCase())">
-            <span class="action-title">{{ action }}</span>
+            <img class="action-image":src="iconUrl(action)">
+
+            <span class="action-title">{{ $i18n.t(`client_menu.${action}`) }}</span>
           </v-card>
         </router-link>
       </div>
@@ -28,7 +29,7 @@ export default {
   },
   data() {
     return {
-      actions: ['Profile', 'Taxes', 'Benefits', 'Payments', 'Logs', 'Others'],
+      actions: ['profile', 'taxes', 'benefits', 'payments', 'logs', 'others'],
     };
   },
   computed: {
