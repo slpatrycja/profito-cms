@@ -1,13 +1,14 @@
 <template>
   <div v-if="isLoaded" class="main-wrapper">
     <div class="actions-wrapper">
-      <div v-for="action in actions" class="p-col-md-3 action-card">
+      <div v-for="action in actions" class="p-col-md-3 action-card-wrapper">
         <v-card
-          :color="black"
-          class="d-flex align-center"
+          class="d-flex align-center action-card"
+          :class="`action-card-${action.toLowerCase()}`"
           height="250"
           width="250"
           @click="toggle">
+          <img class="action-image":src="iconUrl(action.toLowerCase())">
           <span class="action-title">{{ action }}</span>
         </v-card>
       </div>
@@ -17,6 +18,7 @@
 
 <script>
 import { mapState } from 'vuex';
+const svgIcons = require.context('../../../assets/images/icons', false, /\.png/);
 
 export default {
   props: {
@@ -42,6 +44,9 @@ export default {
     getClient() {
       this.$store.dispatch('clients/get', this.id);
     },
+    iconUrl(action) {
+      return svgIcons(`./${action}.png`);
+    },
   },
 };
 </script>
@@ -60,14 +65,30 @@ export default {
   margin-left: 100px;
 }
 
-.action-card {
+.action-card-wrapper {
   flex: 0 0 33.333333%;
   margin: 30px 0;
 }
 
 .action-title {
-  font-size: 30px;
   margin: auto;
-  color: red;
+  color: #409688;
+  font-size: 25px;
+  margin-top: 60%;
+}
+
+.theme--light.v-card {
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 15px !important;
+}
+
+.action-image {
+  width: 80px;
+  position: absolute;
+  left: 35%;
+  top: 25%;
+  height: 80px;
 }
 </style>
