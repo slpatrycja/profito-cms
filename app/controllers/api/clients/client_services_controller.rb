@@ -4,13 +4,9 @@ module Api
   module Clients
     class ClientServicesController < ApplicationController
       def index
-        client_services = ClientService.joins(:client)
-                                       .joins(:service)
-                                       .where(client: client)
-                                       .where(services: { country: country, service_type: params[:service_type] })
-                                       .order(created_at: :desc)
+        client_services = ClientService.joins(:client).joins(:service).where(client: client).where(services: { country: country, service_type: service_type }).order(created_at: :desc)
 
-        render json: client_services
+        render json: ::ClientServiceRepresenter.for_collection.new(client_services)
       end
 
       def create
@@ -52,13 +48,6 @@ module Api
         head :ok
       end
 
-      def send
-        Shipment.create!(client_service: client_service, author_id: current_user.id, date: shipment_date)
-        client_service.update!(status: 'sent')
-
-        head :ok
-      end
-
       private
 
       def client_service
@@ -70,7 +59,7 @@ module Api
       end
 
       def country
-        @_country ||= Country.find_by(name: params[:country_name])
+        @_country ||= Country.find_by(code: params[:country])
       end
 
       def client_service_params
@@ -82,10 +71,6 @@ module Api
       end
 
       def service_type
-        raise NotImplementedError
-      end
-
-      def redirect_to_index_path(_client_id)
         raise NotImplementedError
       end
     end

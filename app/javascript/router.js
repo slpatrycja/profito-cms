@@ -4,6 +4,9 @@ import VueRouter from 'vue-router';
 import Dashboard from './components/Dashboard.vue'
 import ClientDashboard from './components/pages/client/Dashboard.vue'
 import ClientProfile from './components/pages/client/Profile.vue'
+import ClientTaxes from './components/pages/client/taxes/Index.vue'
+import ClientBenefits from './components/pages/client/benefits/Index.vue'
+
 import NotFound from './components/pages/NotFound.vue'
 
 Vue.use(VueRouter);
@@ -18,9 +21,22 @@ export default new VueRouter({
       component: Dashboard,
     },
     {
-      path: '/clients',
-      name: 'clients',
-      component: Dashboard,
+      path: '/clients/:clientId/taxes/:country?',
+      name: 'client-taxes',
+      component: ClientTaxes,
+      props: true,
+    },
+    {
+      path: '/clients/:clientId/benefits/:country?',
+      name: 'client-benefits',
+      component: ClientBenefits,
+      props: true,
+    },
+    {
+      path: '/clients/:clientId/profile',
+      name: 'client-profile',
+      component: ClientProfile,
+      props: true,
     },
     {
       path: '/clients/:id',
@@ -29,10 +45,9 @@ export default new VueRouter({
       props: true,
     },
     {
-      path: '/clients/:id/profile',
-      name: 'client-profile',
-      component: ClientProfile,
-      props: true,
+      path: '/clients',
+      name: 'clients',
+      component: Dashboard,
     },
     {
       path: '*',

@@ -1,8 +1,6 @@
 <template>
   <div v-if="isLoaded" class="wrapper">
-    <v-banner
-      single-line
-      :sticky="sticky">
+    <v-banner>
       <h4>{{ $i18n.t('client_form.editing') }} {{ client.name }} {{ client.surname }}...</h4>
     </v-banner>
     <client-form :client="client" />
@@ -18,7 +16,7 @@ export default {
     ClientForm,
   },
   props: {
-    id: { type: [String, Number], required: true }
+    clientId: { type: [String, Number], required: true }
   },
   computed: {
     ...mapState({
@@ -33,7 +31,7 @@ export default {
   },
   methods: {
     getClient() {
-      this.$store.dispatch('clients/get', this.id);
+      this.$store.dispatch('clients/get', this.clientId);
     },
   },
 };

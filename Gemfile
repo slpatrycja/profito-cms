@@ -17,6 +17,8 @@ gem 'uglifier', '>= 1.3.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'roar'
+gem 'roar-rails'
 
 # html, css and js
 gem 'autoprefixer-rails'

@@ -11,7 +11,7 @@
       </v-card-title>
       <v-data-table
         :headers="headers"
-        :loading="true"
+        :loading="!isLoaded"
         :items="clients"
         :search="search"
         :items-per-page="12"

@@ -1,16 +1,15 @@
 <template>
-  <div v-if="isLoaded" class="main-wrapper">
+  <div class="main-wrapper">
     <div class="actions-wrapper">
-      <div v-for="action in actions" class="p-col-md-3 action-card-wrapper">
-        <router-link :to="{ name: `client-${action}`, params: { clientId: id } }">
+      <div v-for="country in countries" class="p-col-md-3 action-card-wrapper">
+        <router-link :to="{ name: `client-${type}`, params: { clientId, country: country } }">
           <v-card
             class="d-flex align-center action-card"
-            :class="`action-card-${action}`"
             height="250"
             width="250">
-            <img class="action-image":src="iconUrl(action)">
+            <img class="action-image":src="iconUrl(country)">
 
-            <span class="action-title">{{ $i18n.t(`client_menu.${action}`) }}</span>
+            <span class="action-title">{{ $i18n.t(`countries.${country}`) }}</span>
           </v-card>
         </router-link>
       </div>
@@ -19,35 +18,22 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
 const svgIcons = require.context('../../../assets/images/icons', false, /\.png/);
 
 export default {
+  name: 'select-country',
   props: {
-    id: { type: [String, Number], required: true }
+    clientId: { type: [String, Number], required: true },
+    type: { type: [String], required: true }
   },
   data() {
     return {
-      actions: ['profile', 'taxes', 'benefits', 'payments', 'logs', 'others'],
+      countries: ['pl', 'de', 'nl', 'be', 'at'],
     };
   },
-  computed: {
-    ...mapState({
-      client: state => state.clients.client,
-    }),
-    isLoaded() {
-      return this.client;
-    },
-  },
-  created() {
-    this.getClient();
-  },
   methods: {
-    getClient() {
-      this.$store.dispatch('clients/get', this.id);
-    },
-    iconUrl(action) {
-      return svgIcons(`./${action}.png`);
+    iconUrl(country) {
+      return svgIcons(`./${country}.png`);
     },
   },
 };

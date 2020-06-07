@@ -115,7 +115,7 @@
     </div>
 
     <div class="p-row">
-      <v-btn large color="primary" class="btn-save">Save</v-btn>
+      <v-btn large color="primary" class="btn-save" @click.native="save">Save</v-btn>
     </div>
   </div>
 </template>
@@ -126,10 +126,10 @@ export default {
   props: {
     client: { type: Object, default: {} },
   },
-  data() {
-    return {
-       menu2: false,
-    };
+  methods: {
+    save() {
+      console.log('Save!');
+    },
   },
 };
 </script>

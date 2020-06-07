@@ -8,3 +8,9 @@ en:
     others: Others
   client_form:
     editing: Editing
+  countries:
+    pl: Poland
+    de: Germany
+    nl: Netherlands
+    be: Belgium
+    at: Austria

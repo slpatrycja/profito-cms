@@ -77,6 +77,6 @@
 
 .router-view-wrapper {
   margin-left: 256px;
-  width: 75vw;
+  width: calc(100% - 300px);
 }
 </style>

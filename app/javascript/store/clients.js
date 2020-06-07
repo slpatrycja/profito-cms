@@ -1,4 +1,3 @@
-import Vue from 'vue';
 import _ from 'lodash';
 import clientsRepository from '../repositories/clients_repository';
 
