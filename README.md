@@ -1,24 +1,51 @@
-# README
+# ProfitoCMS - version 2.0
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## BACKGROUND
+ProfitoCMS 2.0 is a second, improved version of Profito-Management-App.
+It helps managing clients, taxes, benefits, payments, shipments and provides statistics.
 
-Things you may want to cover:
+Version 2.0 is a Rails + Vue.js hybrid application.
 
-* Ruby version
+## INSTALLATION
 
-* System dependencies
+### Dependencies
+ - RVM for ruby installation: https://rvm.io/ and install proper ruby version (check in Gemfile)
+ - Postgresql 12.2 (i.e. via Homebrew `brew install postgresql`)
+ - Redis (i.e. install by `brew install redis` and to launch it `brew services start redis`)
 
-* Configuration
+### Setting up the application
+```
+# After installing dependencies
+$ cp config/database.yml.sample config/database.yml
+$ bundle
+$ rails db:create
+$ rails db:migrate
+$ rails db:test:prepare
+```
+### Getting started
+Here are some instructions to get started and back in the app.
 
-* Database creation
+1. Get the latest code.
+  ```
+  $ git pull
+  $ bundle
+  ```
 
-* Database initialization
+### Starting WebPacker server
+```
+$ yarn                                            # installs js dependencies
+$ bin/webpack-dev-server                          # start webpacker server
+```
 
-* How to run the test suite
+### Starting Rails server
+```
+$ rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Creating dev admin
+```
+$ rails c
+$ User.create(email: "user@example.com", initials: "UE", admin: true, password: YOUR_PASS_HERE)
+```
 
-* Deployment instructions
-
-* ...
+Then navigate to localhost:3000 in your browser
