@@ -21,13 +21,20 @@ export const actions = {
     const data = await paymentsRepository.index({ clientId });
     context.commit('set', data);
   },
+
+  async create(context, payment) {
+    await paymentsRepository.create(payment);
+
+    const data = await paymentsRepository.index({ clientId });
+    context.commit('set', data);
+  },
 };
 
 export default {
   namespaced: true,
   state: {
-    payments: [],
-    debts: [],
+    payments: null,
+    debts: null,
     summary: null,
   },
   getters,

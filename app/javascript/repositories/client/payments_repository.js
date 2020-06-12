@@ -6,4 +6,10 @@ export default {
 
     return response.data;
   },
+
+  async create(payment) {
+    const response = await httpClient.post(`/clients/${payment.clientId}/payments.json`, { payment });
+
+    return response.data;
+  },
 };

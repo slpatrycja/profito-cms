@@ -11,6 +11,7 @@ import ClientBenefits from './components/pages/client/benefits/Index.vue'
 import ClientBenefitsNew from './components/pages/client/benefits/New.vue'
 import ClientGlobalServices from './components/pages/client/others/Index.vue'
 import ClientPayments from './components/pages/client/payments/Index.vue'
+import ClientPaymentsNew from './components/pages/client/payments/New.vue'
 import ClientLogs from './components/pages/client/logs/Index.vue'
 
 import NotFound from './components/pages/NotFound.vue'
@@ -66,6 +67,12 @@ export default new VueRouter({
       path: '/clients/:clientId/profile',
       name: 'client-profile',
       component: ClientProfile,
+      props: true,
+    },
+    {
+      path: '/clients/:clientId/payments/new',
+      name: 'client-payments-new',
+      component: ClientPaymentsNew,
       props: true,
     },
     {

@@ -4,6 +4,11 @@
       <v-row>
         <v-col>
           <v-card class="pa-2">
+            <div class="btn--expand">
+              <v-btn color="#BF0927" dark>
+                <router-link :to="{ name: 'client-payments-new', params: { clientId } }">+</router-link>
+              </v-btn>
+            </div>
             <v-data-table
               :headers="paymentsHeaders"
               :loading="!isLoaded"
@@ -109,6 +114,17 @@ export default {
     color: #BF0927;
     padding: 20px;
     text-align: center;
+  }
+}
+
+.btn--expand {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 15px;
+
+  a {
+    text-decoration: none;
+    color: white;
   }
 }
 </style>

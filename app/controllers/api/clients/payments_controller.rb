@@ -57,7 +57,7 @@ module Api
       end
 
       def payment_create_params
-        params.require(:payment).permit(:client_id, :value, :author_id)
+        params.require(:payment).permit(:client_id, :value).merge(author_id: current_user.id)
       end
     end
   end

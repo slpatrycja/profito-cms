@@ -6,4 +6,10 @@ export default {
 
     return response.data;
   },
+
+  async create({ clientId, clientService }) {
+    const response = await httpClient.post(`/clients/${clientId}/benefits.json`, { clientService });
+
+    return response.data;
+  },
 };
