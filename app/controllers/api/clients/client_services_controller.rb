@@ -4,7 +4,11 @@ module Api
   module Clients
     class ClientServicesController < ApplicationController
       def index
-        client_services = ClientService.joins(:client).joins(:service).where(client: client).where(services: { country: country, service_type: service_type }).order(created_at: :desc)
+        client_services = ClientService.joins(:client)
+                                       .joins(:service)
+                                       .where(client: client)
+                                       .where(services: { country: country, service_type: service_type })
+                                       .order(created_at: :desc)
 
         render json: ::ClientServiceRepresenter.for_collection.new(client_services)
       end

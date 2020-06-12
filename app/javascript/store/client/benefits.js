@@ -2,7 +2,7 @@ import _ from 'lodash';
 import benefitsRepository from '../../repositories/client/benefits_repository';
 
 export const getters = {
-  benefits: state => state.clients,
+  benefits: state => state.benefits,
 };
 
 export const mutations = {

@@ -6,6 +6,7 @@ import ClientDashboard from './components/pages/client/Dashboard.vue'
 import ClientProfile from './components/pages/client/Profile.vue'
 import ClientTaxes from './components/pages/client/taxes/Index.vue'
 import ClientBenefits from './components/pages/client/benefits/Index.vue'
+import ClientGlobalServices from './components/pages/client/others/Index.vue'
 
 import NotFound from './components/pages/NotFound.vue'
 
@@ -30,6 +31,12 @@ export default new VueRouter({
       path: '/clients/:clientId/benefits/:country?',
       name: 'client-benefits',
       component: ClientBenefits,
+      props: true,
+    },
+    {
+      path: '/clients/:clientId/other-services',
+      name: 'client-others',
+      component: ClientGlobalServices,
       props: true,
     },
     {

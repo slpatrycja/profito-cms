@@ -1,19 +1,19 @@
 import _ from 'lodash';
-import taxesRepository from '../../repositories/client/taxes_repository';
+import globalServicesRepository from '../../repositories/client/global_services_repository';
 
 export const getters = {
-  taxes: state => state.taxes,
+  globalServices: state => state.globalServices,
 };
 
 export const mutations = {
   set(state, value) {
-    state.taxes = value;
+    state.globalServices = value;
   },
 };
 
 export const actions = {
   async index(context, { clientId, country }) {
-    const data = await taxesRepository.index({ clientId, country });
+    const data = await globalServicesRepository.index({ clientId, country });
     context.commit('set', data);
   },
 };
@@ -21,7 +21,7 @@ export const actions = {
 export default {
   namespaced: true,
   state: {
-    taxes: [],
+    globalServices: [],
   },
   getters,
   mutations,

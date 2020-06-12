@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     namespace :clients, path: '/clients/:client_id' do
       resources :taxes
       resources :benefits
+      resources :global_services
     end
   end
 
