@@ -14,13 +14,13 @@ module Api
 
     def create
       client = Client.new(client_params)
-
+      binding.pry
       if client.valid?
         client.surname.strip!
         client.name.strip!
         client.save!
 
-        head :ok
+        render json: client
       else
         render json: { errors: client.errors }, status: :unprocessable_entity
       end
@@ -28,7 +28,7 @@ module Api
 
     def update
       if client.update_attributes(client_params)
-        head :ok
+        render json: client
       else
         render json: { errors: client.errors }, status: :unprocessable_entity
       end

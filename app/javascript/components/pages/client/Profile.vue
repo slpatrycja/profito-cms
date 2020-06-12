@@ -3,7 +3,7 @@
     <v-banner>
       <h4>{{ $i18n.t('client_form.editing') }} {{ client.name }} {{ client.surname }}...</h4>
     </v-banner>
-    <client-form :client="client" />
+    <client-form :client="client" :editing="true" />
   </div>
 </template>
 

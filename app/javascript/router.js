@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import Dashboard from './components/Dashboard.vue'
 import ClientDashboard from './components/pages/client/Dashboard.vue'
 import ClientProfile from './components/pages/client/Profile.vue'
+import ClientNew from './components/pages/client/New.vue'
 import ClientTaxes from './components/pages/client/taxes/Index.vue'
 import ClientBenefits from './components/pages/client/benefits/Index.vue'
 import ClientGlobalServices from './components/pages/client/others/Index.vue'
@@ -58,6 +59,11 @@ export default new VueRouter({
       name: 'client-payments',
       component: ClientPayments,
       props: true,
+    },
+    {
+      path: '/clients/new',
+      name: 'clients-new',
+      component: ClientNew,
     },
     {
       path: '/clients/:id',

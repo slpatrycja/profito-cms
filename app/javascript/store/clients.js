@@ -24,6 +24,14 @@ export const actions = {
     const data = await clientsRepository.get(id);
     context.commit('setClient', data);
   },
+  async create(context, client) {
+    const data = await clientsRepository.create(client);
+    context.commit('setClient', data);
+  },
+  async update(context, client) {
+    const data = await clientsRepository.update(client);
+    context.commit('setClient', data);
+  },
 };
 
 export default {

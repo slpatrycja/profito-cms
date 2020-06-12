@@ -1,5 +1,8 @@
 <template>
   <div v-if="isLoaded" class="main-wrapper">
+    <div class="btn--expand">
+      <v-btn color="#BF0927" dark @click="addNew">Add new client</v-btn>
+    </div>
     <v-card class="main-card">
       <v-card-title>
         <v-text-field
@@ -59,19 +62,28 @@ export default {
     },
     showSingleClient(client) {
       this.$router.push({ name: 'client-dashboard', params: { id: client.id }});
-    }
+    },
+    addNew() {
+      this.$router.push({ name: 'clients-new' });
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .main-wrapper {
-  display: flex;
   align-items: center;
   padding-top: 50px;
   padding-left: 50px;
 }
 .main-card {
+  width: 100%;
+}
+
+.btn--expand {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 15px;
   width: 100%;
 }
 </style>

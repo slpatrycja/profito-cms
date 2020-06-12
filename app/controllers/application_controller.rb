@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   # before_action :block_foreign_hosts
   before_action :authorize_user!
 
-  protect_from_forgery with: :exception
+  skip_before_action :verify_authenticity_token
 
   private
 

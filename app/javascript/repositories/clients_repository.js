@@ -11,4 +11,14 @@ export default {
 
     return response.data;
   },
+  async create(client) {
+    const response = await httpClient.post('/clients.json', { client });
+
+    return response.data;
+  },
+  async update(client) {
+    const response = await httpClient.put(`/clients/${client.id}.json`, { client });
+
+    return response.data;
+  },
 };
