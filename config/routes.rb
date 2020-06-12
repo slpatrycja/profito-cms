@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :taxes
       resources :benefits
       resources :global_services
+      resources :payments
     end
   end
 

@@ -7,6 +7,7 @@ import ClientProfile from './components/pages/client/Profile.vue'
 import ClientTaxes from './components/pages/client/taxes/Index.vue'
 import ClientBenefits from './components/pages/client/benefits/Index.vue'
 import ClientGlobalServices from './components/pages/client/others/Index.vue'
+import ClientPayments from './components/pages/client/payments/Index.vue'
 
 import NotFound from './components/pages/NotFound.vue'
 
@@ -43,6 +44,12 @@ export default new VueRouter({
       path: '/clients/:clientId/profile',
       name: 'client-profile',
       component: ClientProfile,
+      props: true,
+    },
+    {
+      path: '/clients/:clientId/payments',
+      name: 'client-payments',
+      component: ClientPayments,
       props: true,
     },
     {
