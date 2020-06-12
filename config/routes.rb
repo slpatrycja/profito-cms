@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :benefits
       resources :global_services
       resources :payments
+      resources :logs
     end
   end
 

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-class PaymentRepresenter < Roar::Decorator
+class ClientLogRepresenter < Roar::Decorator
   include Roar::JSON
 
   property :id
-  property :value
+  property :description
 
   property :created_at, exec_context: :decorator
   property :author, exec_context: :decorator

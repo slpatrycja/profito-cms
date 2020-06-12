@@ -5,6 +5,7 @@ import taxes from './client/taxes';
 import benefits from './client/benefits';
 import globalServices from './client/global_services';
 import payments from './client/payments';
+import clientLogs from './client/logs';
 
 Vue.use(Vuex);
 
@@ -15,5 +16,6 @@ export default new Vuex.Store({
     benefits,
     globalServices,
     payments,
+    clientLogs
   },
 });

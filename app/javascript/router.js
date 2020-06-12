@@ -8,6 +8,7 @@ import ClientTaxes from './components/pages/client/taxes/Index.vue'
 import ClientBenefits from './components/pages/client/benefits/Index.vue'
 import ClientGlobalServices from './components/pages/client/others/Index.vue'
 import ClientPayments from './components/pages/client/payments/Index.vue'
+import ClientLogs from './components/pages/client/logs/Index.vue'
 
 import NotFound from './components/pages/NotFound.vue'
 
@@ -38,6 +39,12 @@ export default new VueRouter({
       path: '/clients/:clientId/other-services',
       name: 'client-others',
       component: ClientGlobalServices,
+      props: true,
+    },
+    {
+      path: '/clients/:clientId/logs',
+      name: 'client-logs',
+      component: ClientLogs,
       props: true,
     },
     {
