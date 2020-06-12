@@ -21,7 +21,7 @@ export const actions = {
 export default {
   namespaced: true,
   state: {
-    globalServices: [],
+    globalServices: null,
   },
   getters,
   mutations,

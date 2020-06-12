@@ -13,7 +13,7 @@ module Api
     end
 
     def country
-      @_country ||= Country.find_by(name: params[:country_name])
+      @_country ||= Country.find_by(code: params[:country])
     end
   end
 end

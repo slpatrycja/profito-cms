@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :clients, except: [:new, :edit]
+    resources :services, only: [:index]
+    resources :offices, only: [:index]
 
     namespace :clients, path: '/clients/:client_id' do
       resources :taxes

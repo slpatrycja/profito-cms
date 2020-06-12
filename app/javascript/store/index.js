@@ -1,5 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import offices from './offices';
+import services from './services';
 import clients from './clients';
 import taxes from './client/taxes';
 import benefits from './client/benefits';
@@ -11,6 +13,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
+    offices,
+    services,
     clients,
     taxes,
     benefits,

@@ -16,12 +16,18 @@ export const actions = {
     const data = await taxesRepository.index({ clientId, country });
     context.commit('set', data);
   },
+  async create(context, { clientId, country, clientService }) {
+    taxesRepository.create({ clientId, clientService });
+
+    const data = await taxesRepository.index({ clientId, country });
+    context.commit('set', data);
+  },
 };
 
 export default {
   namespaced: true,
   state: {
-    taxes: [],
+    taxes: null,
   },
   getters,
   mutations,

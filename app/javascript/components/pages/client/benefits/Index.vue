@@ -1,18 +1,15 @@
 <template>
-  <div v-if="isLoaded" class="main-wrapper">
+  <div class="main-wrapper">
     <div v-if="!country">
       <select-country :client-id="clientId" :type="'benefits'"/>
     </div>
 
-    <v-card v-else class="main-card">
-      <v-card-title>
-        <v-text-field
-          v-model="search"
-          label="Search"
-          single-line
-          hide-details
-        ></v-text-field>
-      </v-card-title>
+    <v-card v-else-if="country && isLoaded" class="main-card">
+      <div class="btn--expand">
+        <v-btn color="#BF0927" dark>
+          <router-link :to="{ name: 'client-benefits-new', params: { clientId, country } }">Add new benefit</router-link>
+        </v-btn>
+      </div>
       <v-data-table
         :headers="headers"
         :loading="!isLoaded"
@@ -65,13 +62,18 @@ export default {
       return this.benefits;
     },
   },
+  watch: {
+    country() {
+      this.getBenefits();
+    },
+  },
   created() {
     if (this.country) {
-      this.getTaxes();
+      this.getBenefits();
     }
   },
   methods: {
-    getTaxes() {
+    getBenefits() {
       this.$store.dispatch('benefits/index', { clientId: this.clientId, country: this.country });
     },
   },
@@ -87,5 +89,16 @@ export default {
 }
 .main-card {
   width: 100%;
+}
+
+.btn--expand {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 15px;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 </style>

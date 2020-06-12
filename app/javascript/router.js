@@ -6,7 +6,9 @@ import ClientDashboard from './components/pages/client/Dashboard.vue'
 import ClientProfile from './components/pages/client/Profile.vue'
 import ClientNew from './components/pages/client/New.vue'
 import ClientTaxes from './components/pages/client/taxes/Index.vue'
+import ClientTaxesNew from './components/pages/client/taxes/New.vue'
 import ClientBenefits from './components/pages/client/benefits/Index.vue'
+import ClientBenefitsNew from './components/pages/client/benefits/New.vue'
 import ClientGlobalServices from './components/pages/client/others/Index.vue'
 import ClientPayments from './components/pages/client/payments/Index.vue'
 import ClientLogs from './components/pages/client/logs/Index.vue'
@@ -25,9 +27,21 @@ export default new VueRouter({
       component: Dashboard,
     },
     {
+      path: '/clients/:clientId/taxes/:country/new',
+      name: 'client-taxes-new',
+      component: ClientTaxesNew,
+      props: true,
+    },
+    {
       path: '/clients/:clientId/taxes/:country?',
       name: 'client-taxes',
       component: ClientTaxes,
+      props: true,
+    },
+    {
+      path: '/clients/:clientId/benefits/:country/new',
+      name: 'client-benefits-new',
+      component: ClientBenefitsNew,
       props: true,
     },
     {
